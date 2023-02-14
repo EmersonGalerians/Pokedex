@@ -3,7 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Oxanium', cursive;
+    font-family: 'Roboto Slab', serif;
 }
 
 body {
@@ -93,7 +93,7 @@ main {
 
 .stats {
     position: absolute;
-    bottom: 28%;
+    bottom: 29%;
     left: 52%;
     width: 69%;
     transform: translate(-57%, 0);

@@ -2,12 +2,20 @@
 const pokemonName = document.querySelector('.pokemon_name');
 const pokemonNumber = document.querySelector('.pokemon_number');
 const pokemonImage = document.querySelector('.pokemon_imagem');
+
 //forms
 const form = document.querySelector('.form');
 const input = document.querySelector('.input_search');
 //buttons
 const buttonPrev = document.querySelector('.btn_prev');
 const buttonNext = document.querySelector('.btn_next');
+//status
+const pokemonHp = document.querySelector('.hp');
+const pokemonAttack = document.querySelector('.attack');
+const pokemonDefense = document.querySelector('.defense');
+const pokemonSpecialA = document.querySelector('.special_attack');
+const pokemonSpecialD = document.querySelector('.special_defense');
+const pokemonSpeed = document.querySelector('.speed');
 
 let searchPokemon = 1;
 const fetchPokemon = async(pokemon) => {
@@ -28,6 +36,13 @@ const renderPokemon = async(pokemon) => {
         pokemonName.innerHTML = data.name;
         pokemonNumber.innerHTML = data.id;
         pokemonImage.src = data['sprites']['versions']['generation-v']['black-white']['animated']['front_default'];
+        pokemonHp.innerHTML = data['stats']['0']['base_stat'];
+        pokemonAttack.innerHTML = data['stats']['1']['base_stat'];
+        pokemonDefense.innerHTML = data['stats']['2']['base_stat'];
+        pokemonSpecialA.innerHTML = data['stats']['3']['base_stat'];
+        pokemonSpecialD.innerHTML = data['stats']['4']['base_stat'];
+        pokemonSpeed.innerHTML = data['stats']['5']['base_stat'];
+
         input.value = '';
         searchPokemon = data.id;
     } else {
@@ -36,6 +51,7 @@ const renderPokemon = async(pokemon) => {
         pokemonNumber.innerHTML = '';
     }
 }
+
 
 form.addEventListener('submit', (event) => {
     event.preventDefault();

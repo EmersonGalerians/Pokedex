@@ -94,12 +94,14 @@ main {
 .stats {
     position: absolute;
     bottom: 28%;
-    left: 53%;
+    left: 52%;
     width: 69%;
     transform: translate(-57%, 0);
     display: flex;
     gap: 5px;
     flex-wrap: wrap;
     font-size: clamp(8px, 5vw, 1rem);
-    color: rgb(255, 255, 255)
+    color: rgb(255, 255, 255);
+    background-color: rgba(0, 0, 0, 70%);
+    box-shadow: -2px 3px #222, -4px 6px 0 #000;
 }
